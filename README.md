@@ -96,6 +96,16 @@ Perl 6 started as an ambitious effort to completely rewrite Perl. For various re
 
 One major version at a time! Let's figure out Perl 7 first.
 
+## What about the other forks of Perl?
+
+Will Braswell does an amazing job of outlining the paths of various offshoots of Perl in his talk [The Perl Family Tree](https://vimeo.com/394230613).
+
+Perl 6 happened, then struck out on its own as Raku.
+
+The community has talked about a Perl 7 since at least 2013. One brave soul even made a [toy project on GitHub](https://www.github.com/perl7), but that was never a serious attempt. It would have been based on NQP (Not Quite Perl), which would have made it compilable to MOAR, the engine that powers Raku.
+
+Similarly, there was a thing called [Perl 11](http://perl11.org), which was more an umbrella for a design philosophy behind several exploratory forks of Perl. These sort of projects let people try heterodox ideas, and that's fine. The just aren't `perl`.
+
 ## How can I find out more about Perl 7?
 
 * [Getting Better, not Getting By](https://www.youtube.com/watch?v=6wPMh-3qYJM), Sawyer's keynote at The Perl Conference in the Cloud
