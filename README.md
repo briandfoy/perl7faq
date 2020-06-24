@@ -49,7 +49,7 @@ But, this is not simply enabling some features. Changing the default behavior of
 
 ## What about Perl 6?
 
-Perl 6 started as an ambitious effort to completely rewrite Perl. For various reasons, that didn't replace Perl and went off to live a separate life as the language now known as [Raku](https://www.raku.org). The number 7 was next in line?
+Perl 6 started as an ambitious effort to completely rewrite Perl. For various reasons, that didn't replace Perl and went off to live a separate life as the language now known as [Raku](https://www.raku.org). The number 7 was next in line.
 
 ## So when's Perl 8 coming out?
 
