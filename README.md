@@ -63,6 +63,15 @@ Honestly, Perl 6 was announced without a plan. I was there (in the room) we when
 
 This is different. Key people have been planning this for a year. They've carefully considered how big a bite they can take, and have a modest plan going into the next year. The code is already all there.
 
+## What happens to filehandles if indirect object notation disappears?
+
+Some people realize that `print` and friends can be methods on the filehandle. Have you ever considered why there's no comma after the filehandle?
+
+    print STDOUT "Hello world!\n";
+    STDOUT->print( "Hello world!\n" );
+    
+So far, filehandles seem to be safe under `no feature qw(indirect)`.
+
 ## When feature X be included?
 
 Perl 7 is v5.32 with different defaults. You won't see new features and you won't have any taken away from you if you're running on v5.32. If it's already in Perl, you can have it. If it isn't, probably not.
