@@ -31,6 +31,38 @@ In his annoucement at The Perl Conference in the Cloud, Sawyer X (Perl Project L
 
 Most likely it will. Perl 7 is Perl 5.32 with different defaults. If your code can run under v5.32, you are probably close to ready. Note that in the past several years, Perl 5 has removed features that were deprecated even when v5.0 was released in 1994. If you are using those, you need to fix that. Trying your code under v5.32 will find those problems for you.
 
+There will be some compatibility modes. This may be as simple as:
+
+    use compat::p5;
+    
+But, since Perl 7 is v5.32, you already know how to turn off defaults you don't like:
+
+    no strict;
+    
+    { no warnings; ... }
+    
+Don't rely on these as a crutch though. If you want to stick to Perl 5 behavior, you can still use Perl 5.
+
+## What happens to Perl 5?
+
+Perl 5 goes into long term maintenance. That can be as long as a decade or more. You'll still get important security and bug fixes, just for a little bit longer than usual.
+
+The current [Perl support policy](https://perldoc.perl.org/perlpolicy.html) gaurantees support for the previous two maintenance releases. With a new maintenance release every year, this effectively meant two years of support for a major release (such as v5.30 and v5.32).
+
+## What happens if Perl 7 doesn't happen?
+
+That's the gorilla-elephant hybrid in the room, isn't it? We did this once in 2000, didn't we? Perl 6 didn't turn out how we thought it would, but that's life sometimes.
+
+If Perl 7 doesn't happen, we get Perl v5.34 and keep doing that.
+
+But, it's very unlikely that we'll fail here. Perl 7 is v5.32. We already have all of the code. This is more paper suffling and administrative work than anything else. The Perl community already has the tools in place to test all of CPAN against any Perl release (I know, I get the emails about my modules being broken). Perl 7 is more about process adjustment than new code.
+
+And, consider this. Perl finally moved to GitHub. It converted all of its reports in Request Tracker to GitHub issues. You can now interact with the [perl repo on GitHub](https://github.com/Perl/perl5). That was a huge project, and it's the same people that made it happen.
+
+Honestly, Perl 6 was announced without a plan. I was there (in the room) we when decided to invent it. Larry Wall annnounced the new direction that week with no plan, and called it "the community's rewrite of Perl". A long RFC process followed, which [Mark Jason Dominus summarized for Perl.com](https://www.perl.com/pub/2000/11/perl6rfc.html/).
+
+This is different. Key people have been planning this for a year. They've carefully considered how big a bite they can take, and have a modest plan going into the next year. The code is already all there.
+
 ## When feature X be included?
 
 Perl 7 is v5.32 with different defaults. You won't see new features and you won't have any taken away from you if you're running on v5.32. If it's already in Perl, you can have it. If it isn't, probably not.
