@@ -109,6 +109,7 @@ Similarly, there was a thing called [Perl 11](http://perl11.org), which was more
 ## How can I find out more about Perl 7?
 
 * [Getting Better, not Getting By](https://www.youtube.com/watch?v=6wPMh-3qYJM), Sawyer's keynote at The Perl Conference in the Cloud
+* [Sawyer's announcement on p5p](https://www.nntp.perl.org/group/perl.perl5.porters/2020/06/msg257565.html)
 * [Announcing Perl 7](https://www.perl.com/article/announcing-perl-7/) on Perl.com
 * [Perl 7 tl;dr](http://blogs.perl.org/users/brian_d_foy/2020/06/the-perl-7-tldr.html)
 * [Preparing for Perl 7](https://leanpub.com/preparing_for_perl7), from [Perl School](https://perlschool.com)
