@@ -49,6 +49,18 @@ Perl 5 goes into long term maintenance. That can be as long as a decade or more.
 
 The current [Perl support policy](https://perldoc.perl.org/perlpolicy.html) gaurantees support for the previous two maintenance releases. With a new maintenance release every year, this effectively meant two years of support for a major release (such as v5.30 and v5.32).
 
+## What will /usr/bin/perl be?
+
+We don't know the answer to this one yet. _/usr/bin/perl_ is the system Perl. For at least a decade, I have been telling people not to use the system `perl` for user code.  This is the `perl` that the system employs to handle system Perl programs. So, that system can choose what they need. We are working with major packagers to figure out what works best. On my macOS box, that's v5.18 (and soon [won't be there at all](https://developer.apple.com/documentation/macos_release_notes/macos_10_15_beta_release_notes)), but they are also taking it away. 
+
+Relying on the system means you let someone else make the decision for you, and it's a bigger problem than migrating to Perl 7, or even Perl at all. Let's say that your system provides an out-of-date `perl`, which is not uncommon. Then you update to v5.26. Now your regexes break because you have an [unescaped left brace](https://www.effectiveperlprogramming.com/2017/04/you-must-escape-the-left-brace-in-a-regex/). Since you didn't control a key aspect of your user application, you didn't control the system decision to break your code. People often find these issues after a system upgrade (planned or otherwise). 
+
+Having said that, in my guess, is that we'll have something close to the Python situation, where there's `python`, `python2`, and `python3`. So, we'd have `perl` (whatever the system needs, likely the same thing they are using now), `perl5` (a symlink to `perl`), and `perl7` (A different binary). That's just my guess based on how I've seen these things work elsewhere.
+
+The Perl module paths are already set up for this too. We can put the version right in the `@INC` paths so two different versions can install modules into the same prefix (say, `/usr/lib/perl`) without conflicting with each other. Or they could simply use different prefixes.
+
+As the user, you're decision is likely made for you. If you aren't going to install your own `perl` for your application, you're stuck on whatever the system provides. If you do install your own `perl`, you get to decide how that happens.
+
 ## What happens if Perl 7 doesn't happen?
 
 That's the gorilla-elephant hybrid in the room, isn't it? We did this once in 2000, didn't we? Perl 6 didn't turn out how we thought it would, but that's life sometimes.
