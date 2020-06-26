@@ -71,7 +71,7 @@ But, it's very unlikely that we'll fail here. Perl 7 is v5.32. We already have a
 
 And, consider this. Perl finally moved to GitHub. It converted all of its reports in Request Tracker to GitHub issues. You can now interact with the [perl repo on GitHub](https://github.com/Perl/perl5). That was a huge project, and it's the same people that made it happen.
 
-Honestly, Perl 6 was announced without a plan. I was there (in the room) we when decided to invent it. Larry Wall annnounced the new direction that week with no plan, and called it "the community's rewrite of Perl". A long RFC process followed, which [Mark Jason Dominus summarized for Perl.com](https://www.perl.com/pub/2000/11/perl6rfc.html/).
+Honestly, Perl 6 was announced without a plan. I was there (in the room) when we decided to invent it. Larry Wall annnounced the new direction that week with no plan, and called it "the community's rewrite of Perl". A long RFC process followed, which [Mark Jason Dominus summarized for Perl.com](https://www.perl.com/pub/2000/11/perl6rfc.html/).
 
 This is different. Key people have been planning this for a year. They've carefully considered how big a bite they can take, and have a modest plan going into the next year. The code is already all there.
 
