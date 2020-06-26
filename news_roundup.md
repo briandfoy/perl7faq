@@ -9,3 +9,4 @@ Times in EDT unless otherwise noted
 * [Hacker News](https://news.ycombinator.com/item?id=23629477)
 * [/r/programming](https://www.reddit.com/r/programming/comments/hf3jt4/announcing_perl_7/)
 * [ZDNet](https://www.zdnet.com/article/perl-will-finally-make-the-jump-from-perl-5-to-7/) By Chris Duckett | June 25, 2020 -- 06:21 GMT (23:21 PDT)
+* [SDTimes](https://sdtimes.com/softwaredev/perl-7-announced-expected-within-the-next-year/) June 25th, 2020 - Jenna Sargent
