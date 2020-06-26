@@ -67,7 +67,7 @@ That's the gorilla-elephant hybrid in the room, isn't it? We did this once in 20
 
 If Perl 7 doesn't happen, we get Perl v5.34 and keep doing that.
 
-But, it's very unlikely that we'll fail here. Perl 7 is v5.32. We already have all of the code. This is more paper suffling and administrative work than anything else. The Perl community already has the tools in place to test all of CPAN against any Perl release (I know, I get the emails about my modules being broken). Perl 7 is more about process adjustment than new code.
+But, it's very unlikely that we'll fail here. Perl 7 is v5.32. We already have all of the code. This is more paper shuffling and administrative work than anything else. The Perl community already has the tools in place to test all of CPAN against any Perl release (I know, I get the emails about my modules being broken). Perl 7 is more about process adjustment than new code.
 
 And, consider this. Perl finally moved to GitHub. It converted all of its reports in Request Tracker to GitHub issues. You can now interact with the [perl repo on GitHub](https://github.com/Perl/perl5). That was a huge project, and it's the same people that made it happen.
 
@@ -92,13 +92,13 @@ There are many things that people want, and I expect that Perl 8 will be the ver
 
 ## Will Perl 7 have a new object system?
 
-There's the possibility of a new object system. Many people are interested in Ovid's [Cor proposal](https://github.com/Ovid/Cor). But, by "new", we really often mean syntactic sugar over what is already in the code base. Since Perl 7 is compatible with v5.32, you aren't going to loose the way that Perl does it now.
+There's the possibility of a new object system. Many people are interested in Ovid's [Cor proposal](https://github.com/Ovid/Cor). But, by "new", we really often mean syntactic sugar over what is already in the code base. Since Perl 7 is compatible with v5.32, you aren't going to lose the way that Perl does it now.
 
 ## Will UTF-8 features be on by default?
 
 Maybe. Let's see how much work that is. We'd all like to have this, but there's death and destruction in the wake of a big switch like that. Perl has all the features it needs to handle that, but we don't know how much of the community is ready for that.
 
-But, this is not simply enabling some features. Changing the default behavior of encodings is likely to break many programs because the program itself needs to be ready for Unicode (there's a primer in an appendix to the latest [Learning Perl](https://www.learningperl.com). Tom Christainsen answered [Why does modern Perl avoid UTF-8 by default?](https://stackoverflow.com/a/6163129/2766176).
+But, this is not simply enabling some features. Changing the default behavior of encodings is likely to break many programs because the program itself needs to be ready for Unicode (there's a primer in an appendix to the latest [Learning Perl](https://www.learningperl.com). Tom Christiansen answered [Why does modern Perl avoid UTF-8 by default?](https://stackoverflow.com/a/6163129/2766176).
 
 ## What about Perl 6?
 
