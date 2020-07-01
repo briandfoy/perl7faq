@@ -6,6 +6,8 @@ Answers to your questions about Perl 7.
 
 Perl 7 is Perl v5.32 with saner, more modern defaults. It's transitional major version before we get to breaking changes.
 
+There's a [Perl 7 Proposal](https://github.com/Perl/perl5/wiki/The-Proposal-for-Perl-7) in the wiki for the [perl5 repo](https://github.com/Perl/perl5/).
+
 ## Why not Perl 32 (or 34)?
 
 There was some thought to dropping the 5 from the version and using what we already think of as the major version. However, that would reinforce the idea that it's just a continuation of the Perl 5 line. And, 32 is a big number. 
@@ -125,3 +127,4 @@ Similarly, there was a thing called [Perl 11](http://perl11.org), which was more
 * [Announcing Perl 7](https://www.perl.com/article/announcing-perl-7/) on Perl.com
 * [Perl 7 tl;dr](http://blogs.perl.org/users/brian_d_foy/2020/06/the-perl-7-tldr.html)
 * [Preparing for Perl 7](https://leanpub.com/preparing_for_perl7), from [Perl School](https://perlschool.com)
+* [The Proposal for Perl 7](https://github.com/Perl/perl5/wiki/The-Proposal-for-Perl-7)
