@@ -29,14 +29,28 @@ We don't know for sure because we don't have Perl 7 yet. These are some of the t
 
 In his annoucement at The Perl Conference in the Cloud, Sawyer X (Perl Project Lead) said they'd like to have it within a year, but maybe sooner than that.
 
+## How can I help?
+
+There's a [core-p7](https://github.com/Perl/perl5/tree/core-p7) branch in the [Perl repo on GitHub](https://github.com/Perl/perl5). Look for the [known-issues.md](https://github.com/Perl/perl5/blob/core-p7/known-issues.md) for things that need attention.
+
 ## Will Perl 7 run my Perl 5 code?
 
 Most likely it will. Perl 7 is Perl 5.32 with different defaults. If your code can run under v5.32, you are probably close to ready. Note that in the past several years, Perl 5 has removed features that were deprecated even when v5.0 was released in 1994. If you are using those, you need to fix that. Trying your code under v5.32 will find those problems for you.
 
-There will be some compatibility modes. This may be as simple as:
+There will be some compatibility modes—[see Sawyer's announcement from July 3](https://www.nntp.perl.org/group/perl.perl5.porters/2020/07/msg257817.html). The `use VERSION` is going to change behavior to specify major version "protocol" instead of minimum versions and feature bundles. This is a required declaration. To specify the Perl 7 protocol, you specify the `v7` protocol:
 
-    use compat::p5;
-    
+    use v7;
+
+To fall back to Perl 5.32, specify `v5`:
+
+    use v5;
+
+You can get the preview version of the next major version
+
+    use v8;
+
+There's no word on Perl 7 recognizing `use v5.32` in Perl 5 code.
+
 But, since Perl 7 is v5.32, you already know how to turn off defaults you don't like:
 
     no strict;
@@ -53,9 +67,9 @@ The current [Perl support policy](https://perldoc.perl.org/perlpolicy.html) gaur
 
 ## What will /usr/bin/perl be?
 
-We don't know the answer to this one yet. _/usr/bin/perl_ is the system Perl. For at least a decade, I have been telling people not to use the system `perl` for user code.  This is the `perl` that the system employs to handle system Perl programs. So, that system can choose what they need. We are working with major packagers to figure out what works best. On my macOS box, that's v5.18 (and soon [won't be there at all](https://developer.apple.com/documentation/macos_release_notes/macos_10_15_beta_release_notes)), but they are also taking it away. 
+We don't know the answer to this one yet. _/usr/bin/perl_ is the system Perl. For at least a decade, I have been telling people not to use the system `perl` for user code.  This is the `perl` that the system employs to handle system Perl programs. Each system will choose what they need, and it's likely they will stick with Perl 5 since everything using it will not have tested against or migrated to Perl 7 (because it doesn't exist yet). We are working with major packagers to figure out what works best for them. On my macOS box, that's v5.18 (and soon [won't be there at all](https://developer.apple.com/documentation/macos_release_notes/macos_10_15_beta_release_notes)), but they are also taking it away. 
 
-Relying on the system means you let someone else make the decision for you, and it's a bigger problem than migrating to Perl 7, or even Perl at all. Let's say that your system provides an out-of-date `perl`, which is not uncommon. Then you update to v5.26. Now your regexes break because you have an [unescaped left brace](https://www.effectiveperlprogramming.com/2017/04/you-must-escape-the-left-brace-in-a-regex/). Since you didn't control a key aspect of your user application, you didn't control the system decision to break your code. People often find these issues after a system upgrade (planned or otherwise). 
+Relying on the system means you let someone else make the decision for you, and it's a bigger problem than migrating to Perl 7, or even Perl at all. Let's say that your system provides an out-of-date `perl`, which is not uncommon. Then you update to v5.26. Now your regexes break because you have an [unescaped left brace](https://www.effectiveperlprogramming.com/2017/04/you-must-escape-the-left-brace-in-a-regex/). Since you didn't control a key aspect of your user application, you didn't control the system's decision to break your code. People often find these issues after a system upgrade (planned or otherwise). 
 
 Having said that, in my guess, is that we'll have something close to the Python situation, where there's `python`, `python2`, and `python3`. So, we'd have `perl` (whatever the system needs, likely the same thing they are using now), `perl5` (a symlink to `perl`), and `perl7` (A different binary). That's just my guess based on how I've seen these things work elsewhere.
 
@@ -69,7 +83,7 @@ That's the gorilla-elephant hybrid in the room, isn't it? We did this once in 20
 
 If Perl 7 doesn't happen, we get Perl v5.34 and keep doing that.
 
-But, it's very unlikely that we'll fail here. Perl 7 is v5.32. We already have all of the code. This is more paper shuffling and administrative work than anything else. The Perl community already has the tools in place to test all of CPAN against any Perl release (I know, I get the emails about my modules being broken). Perl 7 is more about process adjustment than new code.
+But, it's very unlikely that we'll fail here. Perl 7 is v5.32. We already have all of the code, but it needs some clean-ups. This is more paper shuffling and administrative work than anything else. The Perl community already has the tools in place to test all of CPAN against any Perl release (I know, I get the emails about my modules being broken). Perl 7 is more about process adjustment than new code.
 
 And, consider this. Perl finally moved to GitHub. It converted all of its reports in Request Tracker to GitHub issues. You can now interact with the [perl repo on GitHub](https://github.com/Perl/perl5). That was a huge project, and it's the same people that made it happen.
 
@@ -86,7 +100,7 @@ Some people realize that `print` and friends can be methods on the filehandle. H
     
 So far, filehandles seem to be safe under `no feature qw(indirect)`.
 
-## When feature X be included?
+## Will feature X be included?
 
 Perl 7 is v5.32 with different defaults. You won't see new features and you won't have any taken away from you if you're running on v5.32. If it's already in Perl, you can have it. If it isn't, probably not.
 
