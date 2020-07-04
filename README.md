@@ -2,11 +2,11 @@
 
 Answers to your questions about Perl 7.
 
-## What's Perl 7
+## What's Perl 7?
 
-Perl 7 is Perl v5.32 with saner, more modern defaults. It's transitional major version before we get to breaking changes.
+Perl 7 is Perl v5.32 with saner, more modern defaults. It's a transitional major version before we get to breaking changes.
 
-There's a [Perl 7 Proposal](https://github.com/Perl/perl5/wiki/The-Proposal-for-Perl-7) in the wiki for the [perl5 repo](https://github.com/Perl/perl5/).
+There's a [Perl 7 proposal](https://github.com/Perl/perl5/wiki/The-Proposal-for-Perl-7) in the wiki for the [perl5 repo](https://github.com/Perl/perl5/).
 
 ## Why not Perl 32 (or 34)?
 
@@ -14,7 +14,7 @@ There was some thought to dropping the 5 from the version and using what we alre
 
 We could have done many things, but we had to choose one of them. Perl 7 is what we chose.
 
-## What's are the new defaults?
+## What are the new defaults?
 
 We don't know for sure because we don't have Perl 7 yet. These are some of the things already on the list, although there's no guarantee on anything yet:
 
@@ -27,7 +27,7 @@ We don't know for sure because we don't have Perl 7 yet. These are some of the t
 
 ## When will this happen?
 
-In his annoucement at The Perl Conference in the Cloud, Sawyer X (Perl Project Lead) said they'd like to have it within a year, but maybe sooner than that.
+In his announcement at The Perl Conference in the Cloud, Sawyer X (Perl Project Lead) said they'd like to have it within a year, but maybe sooner than that.
 
 ## How can I help?
 
@@ -63,19 +63,19 @@ Don't rely on these as a crutch though. If you want to stick to Perl 5 behavior,
 
 Perl 5 goes into long term maintenance. That can be as long as a decade or more. You'll still get important security and bug fixes, just for a little bit longer than usual.
 
-The current [Perl support policy](https://perldoc.perl.org/perlpolicy.html) gaurantees support for the previous two maintenance releases. With a new maintenance release every year, this effectively meant two years of support for a major release (such as v5.30 and v5.32).
+The current [Perl support policy](https://perldoc.perl.org/perlpolicy.html) guarantees support for the previous two maintenance releases. With a new maintenance release every year, this effectively means two years of support for a major release (such as v5.30 and v5.32).
 
-## What will /usr/bin/perl be?
+## What will _/usr/bin/perl_ be?
 
 We don't know the answer to this one yet. _/usr/bin/perl_ is the system Perl. For at least a decade, I have been telling people not to use the system `perl` for user code.  This is the `perl` that the system employs to handle system Perl programs. Each system will choose what they need, and it's likely they will stick with Perl 5 since everything using it will not have tested against or migrated to Perl 7 (because it doesn't exist yet). We are working with major packagers to figure out what works best for them. On my macOS box, that's v5.18 (and soon [won't be there at all](https://developer.apple.com/documentation/macos_release_notes/macos_10_15_beta_release_notes)), but they are also taking it away. 
 
 Relying on the system means you let someone else make the decision for you, and it's a bigger problem than migrating to Perl 7, or even Perl at all. Let's say that your system provides an out-of-date `perl`, which is not uncommon. Then you update to v5.26. Now your regexes break because you have an [unescaped left brace](https://www.effectiveperlprogramming.com/2017/04/you-must-escape-the-left-brace-in-a-regex/). Since you didn't control a key aspect of your user application, you didn't control the system's decision to break your code. People often find these issues after a system upgrade (planned or otherwise). 
 
-Having said that, in my guess, is that we'll have something close to the Python situation, where there's `python`, `python2`, and `python3`. So, we'd have `perl` (whatever the system needs, likely the same thing they are using now), `perl5` (a symlink to `perl`), and `perl7` (A different binary). That's just my guess based on how I've seen these things work elsewhere.
+Having said that, my guess is that we'll have something close to the Python situation, where there's `python`, `python2`, and `python3`. So, we'd have `perl` (whatever the system needs, likely the same thing they are using now), `perl5` (a symlink to `perl`), and `perl7` (A different binary). That's just my guess based on how I've seen these things work elsewhere.
 
 The Perl module paths are already set up for this too. We can put the version right in the `@INC` paths so two different versions can install modules into the same prefix (say, `/usr/lib/perl`) without conflicting with each other. Or they could simply use different prefixes.
 
-As the user, you're decision is likely made for you. If you aren't going to install your own `perl` for your application, you're stuck on whatever the system provides. If you do install your own `perl`, you get to decide how that happens.
+As the user, your decision is likely made for you. If you aren't going to install your own `perl` for your application, you're stuck on whatever the system provides. If you do install your own `perl`, you get to decide how that happens.
 
 ## What happens if Perl 7 doesn't happen?
 
@@ -85,9 +85,9 @@ If Perl 7 doesn't happen, we get Perl v5.34 and keep doing that.
 
 But, it's very unlikely that we'll fail here. Perl 7 is v5.32. We already have all of the code, but it needs some clean-ups. This is more paper shuffling and administrative work than anything else. The Perl community already has the tools in place to test all of CPAN against any Perl release (I know, I get the emails about my modules being broken). Perl 7 is more about process adjustment than new code.
 
-And, consider this. Perl finally moved to GitHub. It converted all of its reports in Request Tracker to GitHub issues. You can now interact with the [perl repo on GitHub](https://github.com/Perl/perl5). That was a huge project, and it's the same people that made it happen.
+And, consider this: Perl finally moved to GitHub. It converted all of its reports in Request Tracker to GitHub issues. You can now interact with the [perl5 repo on GitHub](https://github.com/Perl/perl5). That was a huge project, and it's the same people that made it happen.
 
-Honestly, Perl 6 was announced without a plan. I was there (in the room) when we decided to invent it. Larry Wall annnounced the new direction that week with no plan, and called it "the community's rewrite of Perl". A long RFC process followed, which [Mark Jason Dominus summarized for Perl.com](https://www.perl.com/pub/2000/11/perl6rfc.html/).
+Honestly, Perl 6 was announced without a plan. I was there (in the room) when we decided to invent it. Larry Wall announced the new direction that week with no plan, and called it "the community's rewrite of Perl". A long RFC process followed, which [Mark Jason Dominus summarized for Perl.com](https://www.perl.com/pub/2000/11/perl6rfc.html/).
 
 This is different. Key people have been planning this for a year. They've carefully considered how big a bite they can take, and have a modest plan going into the next year. The code is already all there.
 
@@ -108,7 +108,7 @@ There are many things that people want, and I expect that Perl 8 will be the ver
 
 ## Will Perl 7 have a new object system?
 
-There's the possibility of a new object system. Many people are interested in Ovid's [Cor proposal](https://github.com/Ovid/Cor). But, by "new", we really often mean syntactic sugar over what is already in the code base. Since Perl 7 is compatible with v5.32, you aren't going to lose the way that Perl does it now.
+There's the possibility of a new object system. Many people are interested in Ovid's [Cor proposal](https://github.com/Ovid/Cor). But, by "new", we really often mean syntactic sugar over what is already in the codebase. Since Perl 7 is compatible with v5.32, you aren't going to lose the way that Perl does it now.
 
 ## Will UTF-8 features be on by default?
 
@@ -132,7 +132,7 @@ Perl 6 happened, then struck out on its own as Raku.
 
 The community has talked about a Perl 7 since at least 2013. One brave soul even made a [toy project on GitHub](https://www.github.com/perl7), but that was never a serious attempt. It would have been based on NQP (Not Quite Perl), which would have made it compilable to MOAR, the engine that powers Raku.
 
-Similarly, there was a thing called [Perl 11](http://perl11.org), which was more an umbrella for a design philosophy behind several exploratory forks of Perl. These sort of projects let people try heterodox ideas, and that's fine. The just aren't `perl`.
+Similarly, there was a thing called [Perl 11](http://perl11.org), which was more an umbrella for a design philosophy behind several exploratory forks of Perl. These sort of projects let people try heterodox ideas, and that's fine. They just aren't `perl`.
 
 ## How can I find out more about Perl 7?
 
