@@ -2,7 +2,7 @@
 
 Answers to your questions about Perl 7.
 
-## What's Perl 7
+## What's Perl 7?
 
 Perl 7 is Perl v5.32 with saner, more modern defaults. It's a transitional major version before we get to breaking changes.
 
