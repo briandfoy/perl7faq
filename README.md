@@ -31,7 +31,7 @@ In his announcement at The Perl Conference in the Cloud, Sawyer X (Perl Project 
 
 ## How can I help?
 
-Most of the work is happening in [atoomic/perl](https://github.com/atoomic/) so it doesn't overwhelm the main Perl 5 repo with tickets. Appropriate rebasing and merging gets those changes into [core-p7](https://github.com/Perl/perl5/tree/core-p7) branch in the [main Perl repo](https://github.com/Perl/perl5). Look for the [known-issues.md](https://github.com/atoomic/perl/blob/core-p7/known-issues.md) for things that need attention.
+One implementation of what could be Perl7 is happening in [atoomic/perl](https://github.com/atoomic/perl/blob/p7/README.md) so it doesn't overwhelm the main Perl 5 repo with tickets. Appropriate rebasing and merging gets those changes into [atoomic/queens-duck](https://github.com/Perl/perl5/tree/atoomic/queens-duck) branch in the [main Perl repo](https://github.com/Perl/perl5). Look for the [known-issues.md](https://github.com/atoomic/perl/blob/p7/known-issues.md) for things that need attention but also the [bug trackers](https://github.com/atoomic/perl/issues)
 
 ## Will Perl 7 run my Perl 5 code?
 
